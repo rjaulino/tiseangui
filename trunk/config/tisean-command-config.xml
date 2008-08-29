@@ -1,0 +1,50 @@
+<tiseanCommandConfig>
+	<command>
+		<name>comandoclaudia</name>
+		<commandLineName>comandoclaudia</commandLineName>
+		<parameter>
+			<value>-t</value>
+			<gui>
+				<label>label -t</label>
+			</gui>
+		</parameter>
+		<parameter optional="true">
+			<value>-v</value>
+			<gui>
+				<label>label -v</label>
+			</gui>
+		</parameter>
+	</command>
+	<command>
+		<name>command1</name>
+		<commandLineName>command1</commandLineName>
+		<parameter>
+			<value>-t</value>
+			<gui>
+				<label>label -t</label>
+			</gui>
+		</parameter>
+		<parameter optional="true">
+			<value>-v</value>
+			<gui>
+				<label>label -v</label>
+			</gui>
+		</parameter>
+	</command>
+	<command>
+		<name>command2</name>
+		<commandLineName>command2</commandLineName>
+		<parameter>
+			<value>-t</value>
+			<gui>
+				<label>label -t</label>
+			</gui>
+		</parameter>
+		<parameter optional="true">
+			<value>-v</value>
+			<gui>
+				<label>label -v</label>
+			</gui>
+		</parameter>
+	</command>
+</tiseanCommandConfig>
