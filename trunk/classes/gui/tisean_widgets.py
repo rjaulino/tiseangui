@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+## @package tisean_widgets
+#  Development Documentation for the tisean_widgets package.
+#  This package contains all classes that represent, create and manipulate the gui widget of the application
+#
 
 import sys
 
@@ -14,9 +18,21 @@ try:
 except:
 	sys.exit(1)
 
-
+##
+# Development Documentation for the TiseanCommandMenu class.
+# Represents the tisean commands menu widget
+# @author Martin Ramos Mejia
+# @version 0.1
+#
 class TiseanCommandMenu(gtk.MenuItem):
 
+	##
+	# The Constructor
+	#
+	# @param self the instance pointer
+	# @param the TiseanController instance
+	# @param config the TiseanConfig instance that holds the current Tisean configuration
+	#	
 	def __init__(self,controller,config):
 		
 		gtk.MenuItem.__init__(self,'commands')
@@ -38,9 +54,20 @@ class TiseanCommandMenu(gtk.MenuItem):
 		
 		self.show()
 		self.set_submenu(menu)
-		
+
+##
+# Development Documentation for the TiseanCommandForm class.
+# Represents the tisean commands form widget
+# @author Martin Ramos Mejia
+# @version 0.1
+#		
 class TiseanCommandForm(gtk.VBox):
 
+	##
+	# The Constructor
+	#
+	# @param self the instance pointer
+	#
 	def __init__(self):
 	
 		gtk.VBox.__init__(self)
