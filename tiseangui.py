@@ -2,10 +2,10 @@
 
 import sys
 
-sys.path.append('./classes/gui/')
-sys.path.append('./classes/controller/')
-sys.path.append('./classes/config/')
-sys.path.append('./config/')
+sys.path.append('classes/gui/')
+sys.path.append('classes/controller/')
+sys.path.append('classes/config/')
+sys.path.append('config/')
 
 try:
  	import pygtk
@@ -22,8 +22,24 @@ from tisean_widgets import TiseanCommandMenu
 from tisean_controller import TiseanController
 from tisean_config import TiseanConfig
 
-class tiseanGuiLauncher:
+## @package tisean_launcher
+#  Development Documentation for the tisean_launcher package.
+#  This package contains the launcher for the application
+#
 
+##
+# Development Documentation for the TiseanGuiLauncher class.
+# Represents the launcher of the Application
+# @author Martin Ramos Mejia
+# @version 0.1
+#
+class TiseanGuiLauncher:
+
+	##
+	# The Constructor
+	#
+	# @param self the instance pointer
+	#
 	def __init__(self):
 		
 		#Set the Glade file
@@ -47,7 +63,13 @@ class tiseanGuiLauncher:
 		#armado de opciones de menu de comandos
 		menuHolderItem = TiseanCommandMenu(self.controller,self.config)
 		self.menuBar.append(menuHolderItem)
-		
+
+	##
+	# Sets the configuration form of a command on the main gui.
+	#
+	# @param self the instance pointer
+	# @param form TiseanCommandForm instance
+	#		
 	def set_command_form(self,form):
 		if (self.currentForm):
 			self.optionsCommandsHolder.remove(self.currentForm)
@@ -55,5 +77,5 @@ class tiseanGuiLauncher:
 		self.currentForm = form
 
 if __name__ == "__main__":
-	tiseanGui = tiseanGuiLauncher()
+	tiseanGui = TiseanGuiLauncher()
 	gtk.main()

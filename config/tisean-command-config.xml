@@ -1,50 +1,28 @@
 <tiseanCommandConfig>
-	<command>
-		<name>comandoclaudia</name>
-		<commandLineName>comandoclaudia</commandLineName>
-		<parameter>
-			<value>-t</value>
-			<gui>
-				<label>label -t</label>
-			</gui>
-		</parameter>
-		<parameter optional="true">
-			<value>-v</value>
-			<gui>
-				<label>label -v</label>
-			</gui>
-		</parameter>
-	</command>
-	<command>
+	<command>	
 		<name>command1</name>
-		<commandLineName>command1</commandLineName>
-		<parameter>
-			<value>-t</value>
-			<gui>
-				<label>label -t</label>
-			</gui>
-		</parameter>
-		<parameter optional="true">
-			<value>-v</value>
-			<gui>
-				<label>label -v</label>
-			</gui>
-		</parameter>
-	</command>
-	<command>
-		<name>command2</name>
-		<commandLineName>command2</commandLineName>
-		<parameter>
-			<value>-t</value>
-			<gui>
-				<label>label -t</label>
-			</gui>
-		</parameter>
-		<parameter optional="true">
-			<value>-v</value>
-			<gui>
-				<label>label -v</label>
-			</gui>
-		</parameter>
+		<commandLineName>comandLineName1</commandLineName>
+		<description>command1 description</description>
+		
+		<parameters>
+
+			<parameter required="true">
+				<value>-parameter1</value>
+				<name>name of parameter1</name>
+				<type>integer</type>
+			</parameter>
+		
+			<parameter>
+				<value>-parameter2</value>
+				<name>name of parameter2</name>
+				<type>options</type>
+				<options>
+					<option>valueOption1</option>
+					<option>valueOption2</option>
+					<option>valueOption3</option>
+				</options>
+			</parameter>
+			
+		</parameters>		
 	</command>
 </tiseanCommandConfig>
