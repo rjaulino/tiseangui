@@ -1,0 +1,15 @@
+#labels Instructions,HowTo
+#Instructions to make TiseanGUI work on MS Windows.
+
+= Introduction =
+
+This are a collection of tips to allow users of tiseanGUI to work under Windows. This instructions apply to Windows XP. 
+
+
+= Installation of PyGTK =
+
+The best way to install PyGTK on Windows XP is to use the Alberto Ruiz's all-in-one package that you can find with instructions in the following link:
+
+http://aruiz.typepad.com/siliconisland/2006/12/allinone_win32_.html
+
+in this site you can also find instructions to perform a full installation of pyGTK on Windows.
