@@ -45,8 +45,11 @@ class TiseanView():
 		self.consoleWindow = self.mainInterface.get_widget("TiseanGuiConsole")
 		self.menuBar = self.mainInterface.get_widget("TiseanMenuBar")
 		self.optionsCommandsHolder = self.mainInterface.get_widget("TiseanCommandOptionsHolder")
+		self.consoleMenuItem = self.mainInterface.get_widget("console1")
 		
-		# we start the thread that process the messages that receives the console
+		self.consoleWindow.hide()
+		
+		# we set updater method that process the messages that receives the console
 		self.consoleUpdater = TiseanViewSimpleUpdater(self.consoleWindow)
 				
 		#we connect the callbacks of the view
@@ -60,8 +63,26 @@ class TiseanView():
 	# @param TiseanCommandMenu command menu widget
 	#	
 	def command_menu_setup(self,tiseanCommandMenu):
-		self.menuBar.append(tiseanCommandMenu)
+		self.menuBar.insert(tiseanCommandMenu,2)
 
+
+	##
+	# Hides the ConsoleWindow
+	#
+	# @param self the instance pointer
+	#
+	def console_hide(self, widget, event):
+		self.consoleWindow.hide()
+		return True
+		
+	##
+	# Show the ConsoleWindow
+	#
+	# @param self the instance pointer
+	#
+	def console_show(self, widget, event):
+		self.consoleWindow.show()
+		return True
 	
 	##
 	# Connects all the callbacks of the main elements of the view
@@ -72,12 +93,32 @@ class TiseanView():
 		if (self.mainWindow):
 			self.mainWindow.connect("destroy",self.controller.application_close)
 
+		#we prevent the console dialog to be destroyed
+		if (self.consoleWindow):
+			self.consoleWindow.connect("delete-event",self.console_hide)
+		
+		#menu items callbacks
+
+		# console display
+		if (self.consoleMenuItem):
+			self.consoleMenuItem.connect("activate",self.console_display)
+		# exit from file menu
+		quitMenuItem = self.mainInterface.get_widget("quit1")
+		if (quitMenuItem):
+			quitMenuItem.connect("activate",self.controller.application_close)
+	
+	def console_display(self,menuItem):
+
+		if (self.consoleWindow.get_property("visible")):
+			self.consoleWindow.hide()
+		else:
+			self.consoleWindow.show()
+			
 	##
 	# Shows the main elements controlled by the view
 	#
 	# @param self the instance pointer	
 	def show(self):
-		
 		self.mainWindow.show()
 	#	self.consoleWindow.show()	
 		
@@ -137,7 +178,7 @@ class TiseanCommandMenu(gtk.MenuItem):
 	#	
 	def __init__(self,controller,config):
 		
-		gtk.MenuItem.__init__(self,'commands')
+		gtk.MenuItem.__init__(self,'Commands')
 		
 		self.controller = controller
 		self.config = config
@@ -288,6 +329,8 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 		self.button.show()
 		gtk.VBox.show(self)
 		
+	def get_selected_value(self):
+		return self.entry.get_text()
 
 class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 
@@ -306,6 +349,7 @@ class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 		self.label.show()
 		self.entry.show()
 		gtk.VBox.show(self)
+
 
 	def get_selected_value(self):
 		return self.entry.get_text()
