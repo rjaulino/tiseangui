@@ -89,6 +89,8 @@ class TiseanController:
 	#
 	def execute_command(self,button):
 	
+		self.view.console_show(self.view.consoleWindow)
+	
 		#TODO form validation
 		form = self.view.get_command_form()
 		if (not form.validate()):
