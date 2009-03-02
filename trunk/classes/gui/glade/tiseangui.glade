@@ -197,7 +197,7 @@
 	<widget class="GtkTextView" id="consoleText">
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
-	  <property name="editable">True</property>
+	  <property name="editable">False</property>
 	  <property name="overwrite">False</property>
 	  <property name="accepts_tab">True</property>
 	  <property name="justification">GTK_JUSTIFY_LEFT</property>
@@ -214,6 +214,43 @@
       </child>
     </widget>
   </child>
+</widget>
+
+<widget class="GtkAboutDialog" id="TiseanGuiAbout">
+  <property name="border_width">5</property>
+  <property name="width_request">400</property>
+  <property name="height_request">400</property>
+  <property name="visible">True</property>
+  <property name="destroy_with_parent">False</property>
+  <property name="name" translatable="yes">tiseanGUI</property>
+  <property name="copyright" translatable="yes">tiseanGUI
+
+Martin Ramos Mejia
+(ramosmejiamartin@gmail.com)
+
+TISEAN, Nonlinear Time Series Analysis
+
+Rainer Hegger
+Holger Kantz
+Thomas Schreiber
+
+http://www.mpipks-dresden.mpg.de/~tisean/</property>
+  <property name="comments" translatable="yes">TiseanGUI is a multiplatform Graphical User Interface developed in pygtk to simplify the execution of the different routines in the TISEAN: Nonlinear Time Series Analysis package.</property>
+  <property name="license" translatable="yes">Copyright (c) 2009, Martin Ramos Mejia
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+    * Neither the name of the tiseanGUI nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</property>
+  <property name="wrap_license">False</property>
+  <property name="website">http://code.google.com/p/tiseangui/</property>
+  <property name="authors">Martin Ramos Mejia (ramosmejiamartin@gmail.com)</property>
+  <property name="documenters">Martin Ramos Mejia (ramosmejiamartin@gmail.com)</property>
+  <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
 </widget>
 
 </glade-interface>
