@@ -6,6 +6,9 @@
 
 import sys
 from xml.dom.minidom import parse
+from tisean_strategy import TiseanGuiParameterBuildStrategy
+from tisean_strategy import TiseanGuiIntegerParameterBuildStrategy
+from tisean_strategy import TiseanGuiOptionsParameterBuildStrategy
 
 ##
 # Development Documentation for the TiseanCommandConfig class.
@@ -54,6 +57,14 @@ class TiseanCommandConfig:
 	#	
 	def add_parameter(self,parameter):
 		self.parameters[parameter.get_value()] = parameter
+		
+	##
+	#
+	#
+	#
+	#
+	def get_parameters(self):
+		return self.parameters
 
 
 ##
@@ -105,7 +116,12 @@ class TiseanCommandParameterConfig:
 	#
 	def is_required(self):
 		return self.required
-	
+		
+	##
+	# Returns the build strategy of the GUI Element that represents the parameter
+	#
+	def get_build_strategy(self):
+		pass
 	
 
 #
@@ -123,6 +139,12 @@ class TiseanCommandParameterInteger(TiseanCommandParameterConfig):
 	#
 	def __init__(self,name,commandLineName):
 		TiseanCommandParameterConfig.__init__(self,name,commandLineName)
+
+	##
+	# Returns the build strategy of the GUI Element that represents the parameter
+	#
+	def get_build_strategy(self):
+		return TiseanGuiIntegerParameterBuildStrategy()
 #
 # Subclass that defines a Parameter that accepts different options.
 # 
@@ -138,7 +160,7 @@ class TiseanCommandParameterOptions(TiseanCommandParameterConfig):
 	#
 	def __init__(self,name,commandLineName):
 		TiseanCommandParameterConfig.__init__(self,name,commandLineName)
-		self.options = {}
+		self.options = []
 
 	##
 	# Adds and option to the dictionary of options.
@@ -147,7 +169,7 @@ class TiseanCommandParameterOptions(TiseanCommandParameterConfig):
 	# @param option the string option
 	#
 	def add_option(self,option):
-		self.options[option] = option
+		self.options.append(option)
 	
 	##
 	# Returns all the options for the parameter
@@ -155,6 +177,12 @@ class TiseanCommandParameterOptions(TiseanCommandParameterConfig):
 	#
 	def get_options(self):
 		return self.options
+
+	##
+	# Returns the build strategy of the GUI Element that represents the parameter
+	#
+	def get_build_strategy(self):
+		return TiseanGuiOptionsParameterBuildStrategy()
 
 ##
 # Development Documentation for the TiseanConfig class.
@@ -222,8 +250,6 @@ class TiseanConfig:
 				
 				if (required == True):
 					parameterConfig.set_required()
-					
-				print parameterConfig.is_required()
 				
 				#we process the parameter type				
 				paramValueNode = paramNode.getElementsByTagName("type")[0]
@@ -239,7 +265,7 @@ class TiseanConfig:
 					
 					#we process the options
 					optionsNode = paramNode.getElementsByTagName("options")[0]
-					optionList = parametersNode.getElementsByTagName("option")
+					optionList = optionsNode.getElementsByTagName("option")
 
 					for optionNode in optionList:
 						optionTextNode = optionNode.childNodes[0]

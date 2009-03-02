@@ -10,8 +10,8 @@
 				<value>-parameter1</value>
 				<name>name of parameter1</name>
 				<type>integer</type>
-			</parameter>
-		
+			</parameter>			
+
 			<parameter>
 				<value>-parameter2</value>
 				<name>name of parameter2</name>
@@ -19,10 +19,43 @@
 				<options>
 					<option>valueOption1</option>
 					<option>valueOption2</option>
-					<option>valueOption3</option>
 				</options>
-			</parameter>
-			
+			</parameter>			
+
+			<parameter>
+				<value>-parameter3</value>
+				<name>name of parameter3</name>
+				<type>options</type>
+				<options>
+					<option>none</option>
+					<option>valueOption1</option>
+					<option>valueOption2</option>
+				</options>
+			</parameter>			
+					
 		</parameters>		
 	</command>
+
+	<command>	
+		<name>c2d</name>
+		<commandLineName>c2d</commandLineName>
+		<description>
+			local slopes from c1/c2 correlation sum data.
+		</description>
+		
+		<parameters>
+			<parameter required="true">
+				<value>-a</value>
+				<name>average using -#,...,+#</name>
+				<type>integer</type>
+			</parameter>
+			<parameter required="true">
+				<value>-V</value>
+				<name>verbosity level (0 = only fatal errors)</name>
+				<type>integer</type>
+			</parameter>
+		</parameters>		
+	</command>
+	
+	
 </tiseanCommandConfig>
