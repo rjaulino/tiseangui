@@ -274,7 +274,7 @@
   <property name="urgency_hint">False</property>
 
   <child>
-    <widget class="GtkScrolledWindow" id="scrolledwindow1">
+    <widget class="GtkScrolledWindow" id="tiseanConsole">
       <property name="visible">True</property>
       <property name="can_focus">True</property>
       <property name="hscrollbar_policy">GTK_POLICY_ALWAYS</property>
@@ -283,7 +283,7 @@
       <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
 
       <child>
-	<widget class="GtkTextView" id="textview1">
+	<widget class="GtkTextView" id="consoleText">
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
 	  <property name="editable">True</property>
