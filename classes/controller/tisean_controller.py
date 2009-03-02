@@ -92,7 +92,7 @@ class TiseanController:
 		#TODO form validation
 		form = self.view.get_command_form()
 		if (not form.validate()):
-			return false
+			return False
 		
 		commandString = form.get_command_name()
 		
@@ -102,6 +102,8 @@ class TiseanController:
 			if (widget.get_selected_value() is not ''):
 				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
 
+		print(commandString)
+		
 		self.runner.execute_command(commandString)
 		
 	

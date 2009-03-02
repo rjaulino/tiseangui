@@ -175,6 +175,7 @@ class TiseanCommandForm(gtk.VBox):
 	def __init__(self,name,widgets,controller):
 	
 		gtk.VBox.__init__(self)
+		self.set_homogeneous(True);
 		self.controller = controller		
 		self.commandName = name
 		self.label = gtk.Label(self.commandName)
@@ -252,11 +253,11 @@ class TiseanFileDialogWidget(TiseanWidget,gtk.FileChooserDialog):
 			
 		
 
-class TiseanFileWidget(TiseanWidget,gtk.VBox):
+class TiseanFileWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
-		gtk.VBox.__init__(self)	
+		gtk.HBox.__init__(self)	
 		self.label = gtk.Label(label)
 		self.label.set_single_line_mode(True)
 		self.entry = gtk.Entry()
@@ -288,11 +289,11 @@ class TiseanFileWidget(TiseanWidget,gtk.VBox):
 		gtk.VBox.show(self)
 		
 
-class TiseanIntegerParameterWidget(TiseanWidget,gtk.VBox):
+class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
-		gtk.VBox.__init__(self)
+		gtk.HBox.__init__(self)
 		self.label = gtk.Label(label)
 		self.label.set_single_line_mode(True)
 		self.entry = gtk.Entry()
@@ -310,11 +311,11 @@ class TiseanIntegerParameterWidget(TiseanWidget,gtk.VBox):
 		return self.entry.get_text()
 		
 
-class TiseanOptionsParameterWidget(TiseanWidget,gtk.VBox):
+class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label,options):
 		TiseanWidget.__init__(self,name)
-		gtk.VBox.__init__(self)	
+		gtk.HBox.__init__(self)	
 		self.label = gtk.Label(label)
 		self.label.set_single_line_mode(True)
 		self.radioHolder = gtk.HBox(False, 0)
