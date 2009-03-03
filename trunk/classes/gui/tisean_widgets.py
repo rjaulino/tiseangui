@@ -46,8 +46,10 @@ class TiseanView():
 		self.menuBar = self.mainInterface.get_widget("TiseanMenuBar")
 		self.optionsCommandsHolder = self.mainInterface.get_widget("TiseanCommandOptionsHolder")
 		self.consoleMenuItem = self.mainInterface.get_widget("console1")
+		self.aboutUsDialog = self.mainInterface.get_widget('TiseanGuiAbout');
 		
 		self.consoleWindow.hide()
+		self.aboutUsDialog.hide()
 		
 		# we set updater method that process the messages that receives the console
 		self.consoleUpdater = TiseanViewSimpleUpdater(self.consoleWindow)
@@ -93,9 +95,13 @@ class TiseanView():
 		if (self.mainWindow):
 			self.mainWindow.connect("destroy",self.controller.application_close)
 
-		#we prevent the console dialog to be destroyed
+		#we prevent the console window to be destroyed
 		if (self.consoleWindow):
 			self.consoleWindow.connect("delete-event",self.console_hide)
+
+		#we prevent the about us dialog to be destroyed
+		if (self.aboutUsDialog):
+			self.aboutUsDialog.connect("delete-event",self.about_dialog_hide)
 		
 		#menu items callbacks
 
@@ -106,7 +112,21 @@ class TiseanView():
 		quitMenuItem = self.mainInterface.get_widget("quit1")
 		if (quitMenuItem):
 			quitMenuItem.connect("activate",self.controller.application_close)
+
+		#about us
+		aboutUsMenuItem = self.mainInterface.get_widget("about1")
+		if (aboutUsMenuItem):
+			aboutUsMenuItem.connect("activate",self.about_dialog_show)
+
 	
+	def about_dialog_show(self,menuItem):
+		self.aboutUsDialog.show()
+		return True
+		
+	def about_dialog_hide(self, widget, event):
+		self.aboutUsDialog.hide()
+		return True
+
 	def console_display(self,menuItem):
 
 		if (self.consoleWindow.get_property("visible")):
