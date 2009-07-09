@@ -38,8 +38,9 @@ The extensions can be found in https://sourceforge.net/projects/pywin32/
 for more information:
 
 http://docs.python.org/library/subprocess.html
+
 http://www.python.org/dev/peps/pep-0324
+
 http://python.net/crew/mhammond/
-https://sourceforge.net/projects/pywin32/
 
 https://sourceforge.net/projects/pywin32/
