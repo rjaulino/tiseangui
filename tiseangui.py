@@ -16,6 +16,11 @@ except:
 try:
 	import gtk
   	import gtk.glade
+	import platform
+	if (platform.system() is not 'Windows'):
+		gtk.gdk.threads_init()
+	#Initializing the gtk's thread engine
+
 except:
 	sys.exit(1)
 	

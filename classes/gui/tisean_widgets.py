@@ -18,7 +18,7 @@ try:
 except:
 	sys.exit(1)
 
-from tisean_view_updater import TiseanViewSimpleUpdater
+from tisean_view_updater import TiseanViewUpdater
 
 ##
 # Represents the main view of the Tisean Gui, and 
@@ -52,7 +52,9 @@ class TiseanView():
 		self.aboutUsDialog.hide()
 		
 		# we set updater method that process the messages that receives the console
-		self.consoleUpdater = TiseanViewSimpleUpdater(self.consoleWindow)
+		self.consoleUpdater = TiseanViewUpdater(self.consoleWindow)
+		# we start the updater
+		self.consoleUpdater.start_updater()
 				
 		#we connect the callbacks of the view
 		self.callback_connection()
@@ -69,7 +71,7 @@ class TiseanView():
 
 
 	##
-	# Hides the ConsoleWindow
+	# Callback to Hide the ConsoleWindow
 	#
 	# @param self the instance pointer
 	#
@@ -78,13 +80,23 @@ class TiseanView():
 		return True
 		
 	##
-	# Show the ConsoleWindow
+	# Callback to Show the ConsoleWindow
 	#
 	# @param self the instance pointer
 	#
 	def console_show(self, widget, event):
 		self.consoleWindow.show()
 		return True
+
+	##
+	# Shows the ConsoleWindow
+	#
+	# @param self the instance pointer
+	#
+	def console_show(self):
+		self.consoleWindow.show()
+		return True
+
 	
 	##
 	# Connects all the callbacks of the main elements of the view
@@ -102,22 +114,25 @@ class TiseanView():
 		#we prevent the about us dialog to be destroyed
 		if (self.aboutUsDialog):
 			self.aboutUsDialog.connect("delete-event",self.about_dialog_hide)
+			self.aboutUsDialog.connect("close",self.about_dialog_hide)
 		
 		#menu items callbacks
 
 		# console display
 		if (self.consoleMenuItem):
 			self.consoleMenuItem.connect("activate",self.console_display)
+			
 		# exit from file menu
 		quitMenuItem = self.mainInterface.get_widget("quit1")
 		if (quitMenuItem):
 			quitMenuItem.connect("activate",self.controller.application_close)
 
-		#about us
+		#about us display
 		aboutUsMenuItem = self.mainInterface.get_widget("about1")
 		if (aboutUsMenuItem):
 			aboutUsMenuItem.connect("activate",self.about_dialog_show)
-
+		
+		return True
 	
 	def about_dialog_show(self,menuItem):
 		self.aboutUsDialog.show()

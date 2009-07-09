@@ -23,7 +23,6 @@ class TiseanViewSimpleUpdater():
 		endIter = textBuffer.get_iter_at_line_offset(textBuffer.get_line_count()-1,0)
 		text = textBuffer.get_text(startIter,endIter)
 		textBuffer.set_text(text + message)
-	
 
 ##
 # 
@@ -48,16 +47,13 @@ class TiseanViewUpdater(Thread):
 			self.lock.release()
 	
 	def update_message(self):
-		#console.append_message(self.message)
 		self.lock.acquire()
 		try:
 			scrolledWindow = self.console.get_child()
 			textConsole = scrolledWindow.get_child()
 			textBuffer = textConsole.get_buffer()
-			startIter = textBuffer.get_iter_at_line_offset(0, 0)
-			endIter = textBuffer.get_iter_at_line_offset(textBuffer.get_line_count()-1,0)
-			text = textBuffer.get_text(startIter,endIter)
-			textBuffer.set_text(text + 'puto')
+			endIter = textBuffer.get_end_iter()
+			textBuffer.insert(endIter,"" + self.message)
 			self.newMessage = False
 		finally:
 			self.lock.release()
@@ -72,7 +68,6 @@ class TiseanViewUpdater(Thread):
 		self.start()
 	
 	def run(self):
-			
 		while (self.running is True):
 			if (self.newMessage is True):
 				self.update_message()

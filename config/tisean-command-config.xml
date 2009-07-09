@@ -1,11 +1,11 @@
 <tiseanCommandConfig>
+<!--
 	<command>	
 		<name>command1</name>
 		<commandLineName>comandLineName1</commandLineName>
 		<description>command1 description</description>
 		
 		<parameters>
-
 			<parameter required="true">
 				<value>-parameter1</value>
 				<name>name of parameter1</name>
@@ -35,6 +35,53 @@
 					
 		</parameters>		
 	</command>
+-->
+	<command>	
+		<name>ar-model</name>
+		<commandLineName>ar-model</commandLineName>
+		<description>
+			Fits an multivariate AR model to the data and gives the coefficients and the residues (or an iterated model).
+		</description>
+		
+		<parameters>
+			<parameter>
+				<value>-l</value>
+				<name>length of file [default is whole file]</name>
+				<type>integer</type>
+			</parameter>
+			<parameter>
+				<value>-x</value>
+				<name># of lines to be ignored [default is 0]</name>
+				<type>integer</type>
+			</parameter>
+			<parameter>
+				<value>-m</value>
+				<name>dimension [default is 1]</name>
+				<type>integer</type>
+			</parameter>
+			<parameter>
+				<value>-c</value>
+				<name>columns to read [default is 1,...,dimension]</name>
+				<type>integer</type>
+			</parameter>
+			<parameter>
+				<value>-p</value>
+				<name>#order of AR-Fit [default is 1]</name>
+				<type>integer</type>
+			</parameter>
+			<parameter>
+				<value>-V</value>
+				<name>verbosity level [default is 1]</name>
+				<type>options</type>
+				<options>
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>4</option>															
+				</options>
+			</parameter>
+		</parameters>		
+	</command>
 
 	<command>	
 		<name>c2d</name>
@@ -54,6 +101,7 @@
 				<name>verbosity level (0 = only fatal errors)</name>
 				<type>integer</type>
 			</parameter>
+			
 		</parameters>		
 	</command>
 	

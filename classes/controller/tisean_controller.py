@@ -18,6 +18,7 @@ try:
 except:
 	sys.exit(1)
 
+import time
 
 from tisean_widgets import TiseanCommandMenu
 from tisean_widgets import TiseanView
@@ -57,10 +58,7 @@ class TiseanController:
 		#display of the main elements of the view on screen
 		self.view.show()
 
-		#we build the command runner
-		self.runner = TiseanRunner()
-		#we add the observer
-		self.runner.register_observer(self.view.get_console_updater())
+
 
 
 	##
@@ -89,8 +87,9 @@ class TiseanController:
 	#
 	def execute_command(self,button):
 	
-		self.view.console_show(self.view.consoleWindow)
-	
+		#we show the console if it was hidden
+		self.view.console_show()
+
 		#TODO form validation
 		form = self.view.get_command_form()
 		if (not form.validate()):
@@ -103,16 +102,20 @@ class TiseanController:
 		for widget in widgets:
 			if (widget.get_selected_value() is not ''):
 				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
+		
 
-		print(commandString)
-		
-		self.runner.execute_command(commandString)
-		
+		thread = TiseanRunner()
+		thread.register_observer(self.view.get_console_updater())		
+		thread.execute_command('bin/./' + commandString)
+
 	
 	##
 	# Closing of application Action
-	#
-	#
+    #
+	# @param self the instance pointer
+	# @param menuitem the gui element that made the request
 	def application_close(self,window):
 
+		self.view.get_console_updater().stop_updater()
+		self.view.get_console_updater().join()
 		gtk.main_quit()
