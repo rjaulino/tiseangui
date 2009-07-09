@@ -3,13 +3,43 @@
 
 = Introduction =
 
-This are a collection of tips to allow users of tiseanGUI to work under Windows. This instructions apply to Windows XP. 
+This are a collection of tips to allow users of tiseanGUI to work under Windows. This instructions apply to Windows XP, the os in which it has been tested. 
 
+= Installation of Python =
 
-= Installation of PyGTK =
+The installation on Windows of python is quite simple, you only have to use the Windows Installer provided in the python website:
 
-The best way to install PyGTK on Windows XP is to use the Alberto Ruiz's all-in-one package that you can find with instructions in the following link:
+http://www.python.org/download/
 
-http://aruiz.typepad.com/siliconisland/2006/12/allinone_win32_.html
+= Installation of GTK, Glade and PyGTK =
 
-in this site you can also find instructions to perform a full installation of pyGTK on Windows.
+This instructions are for Windows XP workstations who hasn't have any previous installation of GTK+. 
+
+The best way to install pygtk, is to follow its original guide on http://www.pygtk.org/downloads.html
+
+The main problem with this guide is the recommendation of use of the GTK+ Bundle, which doesn't have libglade and Glade3 support, which is needed for tiseangui.
+
+Luckily, the Glade Project has installers for windows that include all the binaries also with a GTK+.
+http://glade.gnome.org/download.html
+
+We are currently testing it with the following package:
+http://ftp.gnome.org/pub/GNOME/binaries/win32/glade3/3.6/glade3-3.6.7-with-GTK+.exe
+
+After installing GTK+ with Glade Support, you have to install the following pyCairo, pyGObjext, pyGTK from the pygtk downloads: http://www.pygtk.org/downloads.html
+
+For any other doubts about setting up your pygtk environment you should read the following entry of the pygtk faq:
+http://faq.pygtk.org/index.py?req=show&file=faq21.001.htp
+
+= Subprocess Module Support on Windows =
+
+tiseangui also uses the subprocess module on windows and as it is stated in the PEP 324 (http://www.python.org/dev/peps/pep-0324) it is necessary to install Mark Hammonds Windows Extensions to make it work.
+The extensions can be found in https://sourceforge.net/projects/pywin32/
+
+for more information:
+
+http://docs.python.org/library/subprocess.html
+http://www.python.org/dev/peps/pep-0324
+http://python.net/crew/mhammond/
+https://sourceforge.net/projects/pywin32/
+
+https://sourceforge.net/projects/pywin32/
