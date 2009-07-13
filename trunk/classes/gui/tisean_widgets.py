@@ -18,6 +18,8 @@ try:
 except:
 	sys.exit(1)
 
+import platform
+
 from tisean_view_updater import TiseanViewUpdater
 
 ##
@@ -294,7 +296,10 @@ class TiseanCommandForm(gtk.VBox):
 		return True
 	
 	def get_command_name(self):
-		return self.commandName
+		command = self.commandName
+		if (platform.system() is 'Windows'):
+			command = command + '.exe' 
+		return command
 	
 	def get_widgets(self):
 		return self.widgets

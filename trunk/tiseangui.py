@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import gobject
 
 sys.path.append('classes/gui/')
 sys.path.append('classes/runner/')
@@ -19,6 +20,8 @@ try:
 	import platform
 	if (platform.system() is not 'Windows'):
 		gtk.gdk.threads_init()
+	else:
+		gobject.threads_init()
 	#Initializing the gtk's thread engine
 
 except:

@@ -1,5 +1,6 @@
 import os
 import time
+import gobject
 from threading import Thread
 from threading import Lock
 

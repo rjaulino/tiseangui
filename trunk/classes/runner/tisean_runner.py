@@ -3,6 +3,9 @@ import os
 import time
 import subprocess
 import tempfile
+import gobject
+import platform
+import string
 from subprocess import Popen,PIPE
 from threading import Thread
 
@@ -44,8 +47,13 @@ class TiseanRunner(Thread):
 	# @param command string with full path of the command to be executed
 	#	
 	def get_popen(self,command):
-	     sp = subprocess
-	     return subprocess.Popen(command, stdout=sp.PIPE, stderr=sp.STDOUT)
+	    #popen support for Windows
+		if (platform.system() is 'Windows'):
+			commandString = string.join(command,' ') 
+			return os.popen(commandString,'r');
+		#popen support tested on Unix
+		sp = subprocess
+		return subprocess.Popen(command, stdout=sp.PIPE, stderr=sp.STDOUT).stdout
 
 	##
 	# Reads lines from a file descriptor, uses to prevent problems of no content sent to the output 
@@ -67,7 +75,7 @@ class TiseanRunner(Thread):
 	#	
 	def notify_observers(self,message):
 		for observer in self.observers:
-			observer.set_update(message)
+			gobject.idle_add(observer.set_update,message)
 			time.sleep(0.001)
 
 	##
@@ -75,13 +83,21 @@ class TiseanRunner(Thread):
 	# @param self the instance pointer
 	#		
 	def run(self):
+		
+		os.chdir('bin')
+		
 		command = self.command
 		self.notify_observers('**** Execution Started ****\n' + 'command called: ' + self.command + "\n**************************\n")
 
 		popen = self.get_popen(command.split())
-		while True:
-			for line in self.readlines(popen.stdout):
+
+		if (platform.system() is 'Windows'): 
+			for line in self.readlines(popen):
 				self.notify_observers(line)
-			if popen.poll() != None: break
-		
+		else:
+			while True:
+				for line in self.readlines(popen):
+					self.notify_observers(line)
+				if popen.poll() != None: break
+
 		self.notify_observers('** Execution Finished **')
