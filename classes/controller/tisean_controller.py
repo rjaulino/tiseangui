@@ -19,6 +19,7 @@ except:
 	sys.exit(1)
 
 import time
+import platform
 
 from tisean_widgets import TiseanCommandMenu
 from tisean_widgets import TiseanView
@@ -103,10 +104,14 @@ class TiseanController:
 			if (widget.get_selected_value() is not ''):
 				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
 		
-
 		thread = TiseanRunner()
 		thread.register_observer(self.view.get_console_updater())		
-		thread.execute_command('bin/./' + commandString)
+		if (platform.system() is not 'Windows'):
+			executionString = './' + commandString
+		else:
+			executionString = commandString
+
+		thread.execute_command(executionString)
 
 	
 	##
