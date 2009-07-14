@@ -279,7 +279,7 @@ class TiseanCommandForm(gtk.VBox):
 		self.label = gtk.Label(self.commandName)
 		self.label.set_markup('<big><b>' + self.commandName + '</b></big>')		
 		self.widgets = widgets
-		
+		self.messageBox = gtk.Label()
 		self.executeButton = gtk.Button('Execute Command')
 		self.set_spacing(10)
 		self.callback_connection()
@@ -306,20 +306,36 @@ class TiseanCommandForm(gtk.VBox):
 
 		commandHolder = gtk.HBox()
 		commandHolder.pack_start(self.executeButton,False,False)
+		commandHolder.pack_start(self.messageBox,False,False)
 		commandHolder.show()
+
 		self.pack_start(commandHolder,False,False)
 		
 		self.executeButton.show()
-		
+		self.messageBox.show()
+				
 		gtk.VBox.show(self)
 	
 	##
 	# Validates the current form
 	#
+	# @return boolean True if valid, False if invalid
 	def validate(self):
-		
-		return True
-	
+
+		#required widgets validation
+		invalid = []
+		for widget in self.widgets:
+			if ((widget.get_selected_value() is '') and (widget.is_required())):
+				invalid.append(widget)
+				
+		if (len(invalid) is 0):
+			return True
+
+		for widget in invalid:
+			widget.set_invalid_layout()
+		#there were invalid items
+		return False
+					
 	def get_command_name(self):
 		command = self.commandName
 		if (platform.system() is 'Windows'):
@@ -328,11 +344,24 @@ class TiseanCommandForm(gtk.VBox):
 	
 	def get_widgets(self):
 		return self.widgets
+		
+	def clear_validation_errors(self):
+		self.clear_message_box()
+		for	widget in self.widgets:
+			widget.set_valid_layout()
+			
+	def set_message_in_message_box(self,text):
+		return self.messageBox.set_markup('<b>' + text + '</b>')
+		
+	def clear_message_box(self):
+		return self.messageBox.set_text('')
+		
 
 class TiseanWidget:
 	
 	def __init__(self,name):
 		self.parameterName = name
+		self.required = False
 	
 	def validate(self):
 		return True
@@ -342,6 +371,18 @@ class TiseanWidget:
 
 	def get_selected_value(self):
 		return '0'
+	
+	def set_required(self):
+		self.required = True
+
+	def is_required(self):
+		return self.required
+	
+	def set_invalid_layout(self):
+		pass
+
+	def set_valid_layout(self):
+		pass		
 				
 class TiseanFileDialogWidget(TiseanWidget,gtk.FileChooserDialog):
 
@@ -398,6 +439,14 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 		
 	def get_selected_value(self):
 		return self.entry.get_text()
+		
+	def set_invalid_layout(self):
+		colour = gtk.gdk.color_parse('red3')
+		self.entry.modify_base(gtk.STATE_NORMAL,colour)
+		
+	def set_valid_layout(self):
+		colour = gtk.gdk.color_parse('white')
+		self.entry.modify_base(gtk.STATE_NORMAL,colour)		
 
 class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 
@@ -422,7 +471,14 @@ class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 
 	def get_selected_value(self):
 		return self.entry.get_text()
-		
+
+	def set_invalid_layout(self):
+		colour = gtk.gdk.color_parse('red3')
+		self.entry.modify_base(gtk.STATE_NORMAL,colour)
+
+	def set_valid_layout(self):
+		colour = gtk.gdk.color_parse('white')
+		self.entry.modify_base(gtk.STATE_NORMAL,colour)		
 
 class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 

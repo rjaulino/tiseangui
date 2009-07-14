@@ -15,7 +15,10 @@ class TiseanGuiIntegerParameterBuildStrategy(TiseanGuiParameterBuildStrategy):
 		TiseanGuiParameterBuildStrategy.__init__(self)
 
 	def build_widget(self,parameterConfig):
-		return TiseanIntegerParameterWidget(parameterConfig.get_value(),parameterConfig.get_name())
+		widget = TiseanIntegerParameterWidget(parameterConfig.get_value(),parameterConfig.get_name())
+		if (parameterConfig.is_required()):
+			widget.set_required()
+		return widget
 
 
 class TiseanGuiOptionsParameterBuildStrategy(TiseanGuiParameterBuildStrategy):
@@ -26,5 +29,8 @@ class TiseanGuiOptionsParameterBuildStrategy(TiseanGuiParameterBuildStrategy):
 	def build_widget(self,parameterConfig):
 
 		options = parameterConfig.get_options()
-		return TiseanOptionsParameterWidget(parameterConfig.get_value(),parameterConfig.get_name(),options)
+		widget = TiseanOptionsParameterWidget(parameterConfig.get_value(),parameterConfig.get_name(),options)
+		if (parameterConfig.is_required()):
+			widget.set_required()
+		return widget
 

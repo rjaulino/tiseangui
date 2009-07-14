@@ -257,11 +257,11 @@ class TiseanConfig:
 				
 				#required checkup
 				requiredAtt = paramNode.getAttribute('required')
-				if (requiredAtt != '' and requiredAtt == 'true'):
+				if (requiredAtt is not '' and requiredAtt == 'true'):
 					required = True
 				else:
 					required = False
-				
+
 				paramNameNode = paramNode.getElementsByTagName("name")[0]
 				for node in paramNameNode.childNodes:
 					if (node.nodeType == node.TEXT_NODE):
@@ -271,13 +271,7 @@ class TiseanConfig:
 				for node in paramValueNode.childNodes:
 					if (node.nodeType == node.TEXT_NODE):
 						paramValue = node.data
-						
-				#we build the parameter instance
-				parameterConfig = TiseanCommandParameterConfig(paramName,paramValue)
-				
-				if (required == True):
-					parameterConfig.set_required()
-				
+	
 				#we process the parameter type				
 				paramValueNode = paramNode.getElementsByTagName("type")[0]
 				for node in paramValueNode.childNodes:
@@ -300,7 +294,10 @@ class TiseanConfig:
 							value = optionTextNode.data
 							parameterConfig.add_option(value)
 				
-				
+				#we set the parameter as required if so.
+				if (required is True):
+					parameterConfig.set_required()
+					
 				#we add it to the command config instance
 				commandConfig.add_parameter(parameterConfig)
 		
