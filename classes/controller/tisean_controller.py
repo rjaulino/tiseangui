@@ -58,6 +58,8 @@ class TiseanController:
 				
 		#display of the main elements of the view on screen
 		self.view.show()
+		
+		self.thread = None
 
 
 
@@ -104,14 +106,14 @@ class TiseanController:
 			if (widget.get_selected_value() is not ''):
 				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
 		
-		thread = TiseanRunner()
-		thread.register_observer(self.view.get_console_updater())		
+		self.thread = TiseanRunner()
+		self.thread.register_observer(self.view.get_console_updater())		
 		if (platform.system() is not 'Windows'):
 			executionString = './' + commandString
 		else:
 			executionString = commandString
 
-		thread.execute_command(executionString)
+		self.thread.execute_command(executionString)
 
 	
 	##

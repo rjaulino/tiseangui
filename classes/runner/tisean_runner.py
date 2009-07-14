@@ -23,7 +23,15 @@ class TiseanRunner(Thread):
 	def __init__(self):
 		Thread.__init__(self)
 		self.observers = []
+		self.running = False
 
+	##
+	# Indicates if the command runner is executing a command
+	# @param self
+	# @return boolean
+	def is_running(self):
+		return self.running
+		
 	##
 	# Register a certaain observer to observer the progress of the command
 	# @param self the instance pointer
@@ -84,6 +92,8 @@ class TiseanRunner(Thread):
 	#		
 	def run(self):
 		
+		self.running = True
+		
 		os.chdir('bin')
 		
 		command = self.command
@@ -101,3 +111,5 @@ class TiseanRunner(Thread):
 				if popen.poll() != None: break
 
 		self.notify_observers('** Execution Finished **')
+		
+		os.chdir('..')
