@@ -224,12 +224,31 @@ class TiseanCommandMenu(gtk.MenuItem):
 		configuredCommands = self.config.get_command_names()
 		
 		menu = gtk.Menu()
-		
+		subsections = {}
+
 		for commandName in configuredCommands:
 			item = TiseanMenuItem(commandName)
 			item.connect("activate",self.controller.load_command_form)
 			item.show()
-			menu.add(item)
+						
+			commandConfig = self.config.get_command_config(commandName)
+			section = commandConfig.get_section()
+			if (section is not None):
+				if (not subsections.has_key(section)):
+					sectionElement = gtk.MenuItem(section)
+					sectionElement.show()
+					subsections[section] = sectionElement
+					sectionMenuElement = gtk.Menu()
+					sectionElement.set_submenu(sectionMenuElement)
+					sectionMenuElement.show()
+					menu.add(sectionElement)
+				else:
+					sectionElement = subsections[section]
+					sectionMenuElement = sectionElement.get_submenu()
+
+				sectionMenuElement.add(item)
+			else:
+				menu.add(item)
 		
 		menu.show()
 		
