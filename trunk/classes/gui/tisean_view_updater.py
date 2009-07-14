@@ -55,6 +55,8 @@ class TiseanViewUpdater(Thread):
 			textBuffer = textConsole.get_buffer()
 			endIter = textBuffer.get_end_iter()
 			textBuffer.insert(endIter,"" + self.message)
+			endIter = textBuffer.get_end_iter()
+			textConsole.scroll_to_iter(endIter,0.2)
 			self.newMessage = False
 		finally:
 			self.lock.release()

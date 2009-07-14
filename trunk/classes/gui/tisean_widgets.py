@@ -169,6 +169,7 @@ class TiseanView():
 		if (self.currentForm):
 			self.optionsCommandsHolder.remove(self.currentForm)
 		self.optionsCommandsHolder.pack_end(form)
+		self.optionsCommandsHolder.set_border_width(10)
 		self.currentForm = form
 	
 	def get_command_form(self):
@@ -257,7 +258,9 @@ class TiseanCommandForm(gtk.VBox):
 		self.controller = controller		
 		self.commandName = name
 		self.label = gtk.Label(self.commandName)
+		self.label.set_markup('<big><b>' + self.commandName + '</b></big>')		
 		self.widgets = widgets
+		
 		self.executeButton = gtk.Button('Execute Command')
 		self.set_spacing(10)
 		self.callback_connection()
@@ -282,14 +285,17 @@ class TiseanCommandForm(gtk.VBox):
 			self.pack_start(widget,False,False)
 			widget.show()
 
-		self.pack_start(self.executeButton,False,False)
+		commandHolder = gtk.HBox()
+		commandHolder.pack_start(self.executeButton,False,False)
+		commandHolder.show()
+		self.pack_start(commandHolder,False,False)
+		
 		self.executeButton.show()
-
+		
 		gtk.VBox.show(self)
 	
 	##
 	# Validates the current form
-	# @todo
 	#
 	def validate(self):
 		
@@ -338,11 +344,13 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
-		gtk.HBox.__init__(self)	
-		self.label = gtk.Label(label)
+		gtk.HBox.__init__(self)
+		self.set_spacing(5)					
+		self.label = gtk.Label()
+		self.label.set_markup('<b>' + label + '</b>')		
 		self.label.set_single_line_mode(True)
 		self.entry = gtk.Entry()
-		self.entry.set_editable(False)
+		self.entry.set_editable(True)
 		self.button = gtk.Button('Select a File');
 		self.callback_connection()
 		
@@ -377,7 +385,9 @@ class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
 		gtk.HBox.__init__(self)
-		self.label = gtk.Label(label)
+		self.set_spacing(5)				
+		self.label = gtk.Label()
+		self.label.set_markup('<b>' + label + '</b>')
 		self.label.set_single_line_mode(True)
 		self.entry = gtk.Entry()
 		self.entry.set_max_length(50)
@@ -399,15 +409,18 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label,options):
 		TiseanWidget.__init__(self,name)
-		gtk.HBox.__init__(self)	
-		self.label = gtk.Label(label)
+		gtk.HBox.__init__(self)
+		self.set_spacing(10)	
+		self.label = gtk.Label()
+		self.label.set_markup('<b>' + label + '</b>')
 		self.label.set_single_line_mode(True)
 		self.radioHolder = gtk.HBox(False, 0)
+		self.buttons = []
 		
 		first = None
 		
 		for option in options:
-
+			
 			if (first is not None):
 				button = gtk.RadioButton(first, option)
 
@@ -416,6 +429,7 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 				first = button
 				
 			self.radioHolder.pack_start(button, False, False, 0)
+			self.buttons.append(button)
 			button.show()
 			
 	
@@ -425,4 +439,10 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 		self.label.show()
 		self.radioHolder.show()
 		gtk.VBox.show(self)
+		
+	def get_selected_value(self):
+		
+		for button in self.buttons:
+			if (button.get_active() is True):
+				return button.get_label()
 
