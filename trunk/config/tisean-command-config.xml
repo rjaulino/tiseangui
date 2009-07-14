@@ -42,7 +42,7 @@
 		<description>
 			Fits an multivariate AR model to the data and gives the coefficients and the residues (or an iterated model).
 		</description>
-		
+		<section>Section1</section>
 		<parameters>
 			<parameter>
 				<value>-l</value>
@@ -89,7 +89,7 @@
 		<description>
 			local slopes from c1/c2 correlation sum data.
 		</description>
-		
+		<section></section>
 		<parameters>
 			<parameter required="true">
 				<value>-a</value>

@@ -29,6 +29,7 @@ class TiseanCommandConfig:
 		self.name = name
 		self.commandLineName = commandLineName
 		self.parameters = {}
+		self.section = None
 	
 	##
 	# Getter for the name of the command
@@ -65,6 +66,24 @@ class TiseanCommandConfig:
 	#
 	def get_parameters(self):
 		return self.parameters
+
+	##
+	# Sets the section of the command.
+	#
+	# @param self the instance pointer
+	# @return String or None
+	def set_section(self,section):	
+		self.section = section
+	
+	##
+	# Returns the section of the command.
+	#
+	# @param self the instance pointer
+	# @return String or None
+	def get_section(self):
+		if (self.section is ''):
+			return None
+		return self.section
 
 
 ##
@@ -217,9 +236,17 @@ class TiseanConfig:
 			for node in commandNameNode.childNodes:
 				if (node.nodeType == node.TEXT_NODE):
 					commandName = node.data
+
+			section = ''
+			sectionHolder = commandNode.getElementsByTagName("section")[0]
+			if (sectionHolder is not ''):
+				for node in sectionHolder.childNodes:
+					if (node.nodeType == node.TEXT_NODE):
+						section = node.data
 			
 			#we create an instance of TiseanCommandConfig that represents the command
 			commandConfig = TiseanCommandConfig(name,commandName)
+			commandConfig.set_section(section)
 			self.commands[name] = commandConfig
 
 			#we process the parameters of the command
