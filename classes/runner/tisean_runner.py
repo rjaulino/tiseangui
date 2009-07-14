@@ -110,6 +110,6 @@ class TiseanRunner(Thread):
 					self.notify_observers(line)
 				if popen.poll() != None: break
 
-		self.notify_observers('** Execution Finished **')
+		self.notify_observers('** Execution Finished **\n')
 		
 		os.chdir('..')

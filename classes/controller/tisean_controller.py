@@ -89,23 +89,28 @@ class TiseanController:
 	#
 	#
 	def execute_command(self,button):
-	
+
+
+		form = self.view.get_command_form()
+
+		form.clear_validation_errors()
+		
+		#Validation of Required Elements		
+		if (not form.validate()):
+			form.set_message_in_message_box(' Validation Error. Please check the marked fields.')
+			return False
+			
 		#we show the console if it was hidden
 		self.view.console_show()
-
-		#TODO form validation
-		form = self.view.get_command_form()
-		if (not form.validate()):
-			return False
 		
 		commandString = form.get_command_name()
-		
 		widgets = form.get_widgets()
 		
+		#we perform the execution of the command
 		for widget in widgets:
 			if (widget.get_selected_value() is not ''):
 				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
-		
+	
 		self.thread = TiseanRunner()
 		self.thread.register_observer(self.view.get_console_updater())		
 		if (platform.system() is not 'Windows'):
@@ -115,6 +120,7 @@ class TiseanController:
 
 		self.thread.execute_command(executionString)
 
+		return True
 	
 	##
 	# Closing of application Action

@@ -14,6 +14,8 @@ class TiseanGuiFactory:
 		#Input and Output Widgets
 
 		inputWidget = TiseanFileWidget('','Input Filename')
+		inputWidget.set_required()
+		
 		outputWidget = TiseanFileWidget('-o','Output Filename')
 		
 		parameters = tiseanCommandConfig.get_parameters()
