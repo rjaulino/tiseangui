@@ -12,15 +12,18 @@ class TiseanGuiFactory:
 	def create_form(self,tiseanCommandConfig,controller): 
 	
 		#Input and Output Widgets
-
-		inputWidget = TiseanFileWidget('','Input Filename')
-		inputWidget.set_required()
+		if (tiseanCommandConfig.has_input()):
+			inputWidget = TiseanFileWidget('','Input Filename')
+			inputWidget.set_required()
 		
 		outputWidget = TiseanFileWidget('-o','Output Filename')
 		
 		parameters = tiseanCommandConfig.get_parameters()
 		parameterWidgets = []
-		parameterWidgets.append(inputWidget)
+
+		if (tiseanCommandConfig.has_input()):
+			parameterWidgets.append(inputWidget)
+
 		parameterWidgets.append(outputWidget)
 
 		for key in parameters:

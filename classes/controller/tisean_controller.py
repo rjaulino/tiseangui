@@ -62,8 +62,6 @@ class TiseanController:
 		self.thread = None
 
 
-
-
 	##
 	# Callback that loads the gui for a certain command on the current view
 	#
