@@ -30,6 +30,7 @@ class TiseanCommandConfig:
 		self.commandLineName = commandLineName
 		self.parameters = {}
 		self.section = None
+		self.noinput = False
 	
 	##
 	# Getter for the name of the command
@@ -84,7 +85,15 @@ class TiseanCommandConfig:
 		if (self.section is ''):
 			return None
 		return self.section
-
+	
+	##
+	# sets the command to dont have input support input
+	#
+	def set_no_input(self):
+		self.noinput = True
+	
+	def has_input(self):
+		return not self.noinput
 
 ##
 # Development Documentation for the TiseanCommandParameterConfig class.
@@ -226,6 +235,13 @@ class TiseanConfig:
 		for commandNode in commandNodes:
 			#for every command
 			#we process its config info
+			
+			noinputAtt = commandNode.getAttribute('noinput')
+			if (noinputAtt is not '' and noinputAtt == 'true'):
+				noinput = True
+			else:
+				noinput = False
+			
 			nameNode = commandNode.getElementsByTagName("name")[0]
 			for node in nameNode.childNodes:
 				if (node.nodeType == node.TEXT_NODE):
@@ -246,6 +262,9 @@ class TiseanConfig:
 			
 			#we create an instance of TiseanCommandConfig that represents the command
 			commandConfig = TiseanCommandConfig(name,commandName)
+			if (noinput):
+				commandConfig.set_no_input()
+				
 			commandConfig.set_section(section)
 			self.commands[name] = commandConfig
 
