@@ -24,6 +24,7 @@ class TiseanRunner(Thread):
 		Thread.__init__(self)
 		self.observers = []
 		self.running = False
+		self.abort = False
 
 	##
 	# Indicates if the command runner is executing a command
@@ -86,6 +87,9 @@ class TiseanRunner(Thread):
 			gobject.idle_add(observer.set_update,message)
 			time.sleep(0.001)
 
+	def abort_execution(self):
+		self.abort = True
+
 	##
 	# Implementation of the execution of the command and update of the observers
 	# @param self the instance pointer
@@ -103,12 +107,14 @@ class TiseanRunner(Thread):
 
 		if (platform.system() is 'Windows'): 
 			for line in self.readlines(popen):
+				if (self.abort is True):
+					break;
 				self.notify_observers(line)
 		else:
 			while True:
 				for line in self.readlines(popen):
 					self.notify_observers(line)
-				if popen.poll() != None: break
+				if popen.poll() != None or self.abort: break
 
 		self.notify_observers('** Execution Finished **\n')
 		

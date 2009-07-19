@@ -355,8 +355,7 @@ class TiseanCommandForm(gtk.VBox):
 		
 	def clear_message_box(self):
 		return self.messageBox.set_text('')
-		
-
+	
 class TiseanWidget:
 	
 	def __init__(self,name):
@@ -382,7 +381,14 @@ class TiseanWidget:
 		pass
 
 	def set_valid_layout(self):
-		pass		
+		pass
+
+	def get_parameter_string(self):
+		if (self.get_selected_value() is not ''):
+			return self.get_parameter_name() + ' ' + self.get_selected_value()
+		else:
+			return ''
+				
 				
 class TiseanFileDialogWidget(TiseanWidget,gtk.FileChooserDialog):
 
@@ -448,7 +454,7 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 		colour = gtk.gdk.color_parse('white')
 		self.entry.modify_base(gtk.STATE_NORMAL,colour)		
 
-class TiseanIntegerParameterWidget(TiseanWidget,gtk.HBox):
+class TiseanTextParameterWidget(TiseanWidget,gtk.HBox):
 
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
@@ -521,3 +527,15 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 			if (button.get_active() is True):
 				return button.get_label()
 
+class TiseanSimpleParameterWidget(TiseanOptionsParameterWidget):
+
+	def __init__(self,name,label):
+		options = ['no', 'yes']
+		TiseanOptionsParameterWidget.__init__(self,name,label,options)
+
+	def get_parameter_string(self):
+		value = self.get_selected_value()
+		if (value == 'yes'):
+			return self.get_parameter_name()
+		else:
+			return ''

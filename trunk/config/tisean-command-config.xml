@@ -10,37 +10,37 @@
 			<parameter required='true'>
 				<value>-l</value>
 				<name>number of points x,y (l=0: infinite)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-A</value>
 				<name>parameter a (1.4)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-B</value>
 				<name>parameter b (0.3)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-X</value>
 				<name>initial x</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>Number of transients discarded (10000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-Y</value>
 				<name>initial y</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 		</parameters>
 	</command>
@@ -52,42 +52,42 @@
 			<parameter required='true'>
 				<value>-l</value>
 				<name>number of points x,y (l=0: infinite)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-A</value>
 				<name>parameter a (0.4)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-B</value>
 				<name>parameter b (6.0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-C</value>
 				<name>parameter c (0.9)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-R</value>
 				<name>initial Re(z)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>initial Im(z)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>Number of transients discarded (10000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>									
 		</parameters>
 	</command>
@@ -100,42 +100,42 @@
 			<parameter required='true'>
 				<value>-l</value>
 				<name>number of triples x,y,z</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>sample points per unit time [100]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>absolute dynamical noise level [0]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>parameter r [28]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>parameter sigma [0]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-B</value>
 				<name>parameter b [8/3]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of transients discarded (10000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>									
 		</parameters>
 	</command>
@@ -148,47 +148,47 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use (default: whole file)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (default: 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of columns to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-c</value>
 				<name>column(s) to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-%</value>
 				<name>noiselevel in percent</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>absolute noiselevel (or absolute variance if -g is set)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-g</value>
 				<name>add gaussian noise instead of uniform</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>change the seed of the random number generator</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-0</value>
 				<name>Don't read any data file, just generate random numbers with zero mean. (Requires -r and -l)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -211,32 +211,32 @@
 			<parameter>
 				<value>-l</value>
 				<name>length of file [default is whole file]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name># of lines to be ignored [default is 0]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>dimension [default is 1]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to read [default is 1,...,dimension]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>#order of AR-Fit [default is 1]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>iterate s steps of the model [default is no iteration]</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -260,27 +260,27 @@
 			<parameter required='true'>
 				<value>-l</value>
 				<name>number of iterations (l=0: infinite)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of AR-model (default determined from input)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of transients discarded (10000) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -293,47 +293,47 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>dimension of the vectors</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of the initial AR-model</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-P</value>
 				<name>order of the AR,I,MA model (default 0,0,0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>max. number of iterations of the ARIMA Fit</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-e</value>
 				<name>required accuracy of the ARIMA convergence</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>length of iterated data set</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -357,27 +357,27 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-D</value>
 				<name>number of correlations</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>don't use normalization to standard deviation</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -399,32 +399,32 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>number of poles (default: 128)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-P</value>
 				<name>number of frequences to print (default: 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>sampling rate in Hz (default: 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -447,32 +447,32 @@
 			<parameter>
 				<value>-f</value>
 				<name>sampling rate (e.g. in Hz, default 1.)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>frequency resolution (e.g. in Hz, default 1/N)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -485,27 +485,27 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>no. of input columns,embedding dimension (default: 2,1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
@@ -521,7 +521,7 @@
 			<parameter>
 				<value>-q</value>
 				<name>depending on -W (-W2: Number of components written, -W3: Projection dimension)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -543,37 +543,37 @@
 			<parameter required='true'>
 				<value>-X</value>
 				<name>frequency to be cancelled</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>sampling rate of data (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>width of filter (f/100)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>		
 	</command>
@@ -586,32 +586,32 @@
 			<parameter>
 				<value>-f</value>
 				<name>sampling rate (e.g. in Hz, default 1.)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>frequency resolution (e.g. in Hz, default 1/N)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -624,22 +624,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (default: 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -662,37 +662,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>no. of components to be read (dimension)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>length of the averaging window back in time,length of the averaging window forward in time (default: 2,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of the fitted polynomial</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-D</value>
 				<name>order of the derivative to be estimated</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -716,27 +716,27 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of columns to be read (1) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>									
 		</parameters>
 	</command>
@@ -749,42 +749,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>ignore the first # rows</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name># of components to read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>Minimum of the rescaled series</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-Z</value>
 				<name>Maximum of the rescaled series</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>subtract the average (overwrites -Z and -z)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-v</value>
 				<name>set the variance to 1 (overwrites -Z and -z)	</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -806,27 +806,27 @@
 			<parameter>
 				<value>-a</value>
 				<name>subtract average</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-v</value>
 				<name>subtract mean, normalise to unit variance</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -848,22 +848,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-b</value>
 				<name>number of intervals</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -885,27 +885,27 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>column to be read (1)</value>
 				<name></name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>new sampling time in units of the original one (0.5)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of the polynomial for the interpolation (4)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -929,37 +929,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>no. of components,embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>size of the neighbourhood ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-%</value>
 				<name>print only the percentage # of all points found should help to keep the file size reasonably small (100.0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -981,47 +981,47 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-m</value>
 				<name>embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>time resolution (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>time steps (100, at most 500)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-%</value>
 				<name>fraction at wich to create levels (0.05, at least 0.01)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -1034,72 +1034,72 @@
 			<parameter required='true'>
 				<value>-#</value>
 				<name>number of segments the data should be divided into</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (3)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-1</value>
 				<name>which segments should be used to forecast the others (1-(# of segments) (all))</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-2</value>
 				<name>which segments should be forecasted by the others (1-(# of segments) (all))</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>for how many reference points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>step to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>																																	
 			<parameter>
 				<value>-C</value>
 				<name>width of causality window (steps to be forecasted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>						
 			<parameter>
 				<value>-V</value>
@@ -1121,42 +1121,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name>Number of columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-F</value>
 				<name>The format for the embedding vector (not set)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay of the embedding vector (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-D</value>
 				<name>list of individual delays</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1178,27 +1178,27 @@
 			<parameter required='true'>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-b</value>
 				<name>number of boxes for the partition (16)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-D</value>
 				<name>maximal time delay (20)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1220,37 +1220,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-q</value>
 				<name>component for the crossing (0: from below, 1: from above)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>position of the crossing (default: average of the data)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1272,37 +1272,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name># of components (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>which components to maxi(mini)mize (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>determine minima instead of maxima (default: maxima)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>minimal time required between two extrema (0.0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1324,62 +1324,62 @@
 			<parameter required='true'>
 				<value>-m</value>
 				<name>embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-r</value>
 				<name>absolute kernel bandwidth</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-v</value>
 				<name>same as fraction of standard deviation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>period of orbit (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>minimal separation of trial points (e)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>minimal separation of distinct orbits (e)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>maximal error of orbit to be plotted (all plotted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>initial separation for stability (e)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of trials (all points)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1404,37 +1404,37 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>period of orbit (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -1447,42 +1447,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>ignore the first # rows (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>minimal embedding dimensions of the vectors (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name># of components, max. embedding dimension of the vectors (default: 1,5)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay of the vectors (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>ratio factor (2.0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>theiler window (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1505,62 +1505,62 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of components of the time series,embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>for how many points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>temporal distance between the reference points (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>width of causality window (steps to be forecasted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1583,62 +1583,62 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1,2,...,'number of components')</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of components of the time series,embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-L</value>
 				<name>number of iterations into the future (1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-K</value>
 				<name>use only the nearest k neighbors found</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-%</value>
 				<name>add dynamical noise in units of percentage of the variance (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>Seed for the random number generator used to add noise.</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1660,57 +1660,57 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of components to be read,embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>for how many points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>width of causality window (steps to be forecasted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1733,52 +1733,52 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name># of components,embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-L</value>
 				<name>length of prediction (1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((interval of data)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-0</value>
 				<name>perform a zeroth order fit instead of a local linear one (not set (local linear))</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1800,57 +1800,57 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name># of components, embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>for how many points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>neighborhood size to end with (data interval)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>width of causality window (steps to be forecasted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1872,57 +1872,57 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name># of components, embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>for how many points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>neighborhood size to end with (data interval)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>width of causality window (steps to be forecasted)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -1944,52 +1944,52 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>number of centers (10)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-X</value>
 				<name>deactivate drift (Coulomb force) (default: activated)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to forecast (for the forecast error) (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of points for the fit</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-L</value>
 				<name>determines the length of the predicted series (none)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2011,42 +2011,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of the polynomial</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of points for the fit</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-L</value>
 				<name>determines the length of the predicted series</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2068,37 +2068,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>length for the insample error estimation (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-L</value>
 				<name>length of the trajectory to cast (1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
@@ -2125,42 +2125,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>length for the insample error estimation (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>reduce down to # terms (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
@@ -2187,12 +2187,12 @@
 			<parameter>
 				<value>-m</value>
 				<name>dimension of the polynomial (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>order of the polynomial (3)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2214,22 +2214,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read, comma separated (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -2242,42 +2242,42 @@
 			<parameter required='true'>
 				<value>-m</value>
 				<name>embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-r</value>
 				<name>absolut radius of neighbourhoods</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-v</value>
 				<name>same as fraction of standard deviation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -2290,52 +2290,52 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of components, embedding dimension (1,5)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-q</value>
 				<name>dimension of the manifold to project to (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal number of neighbours (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal size of the neighbourhood ((interval of data)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-2</value>
 				<name>use euclidean metric instead of the tricky one (tricky metric)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2361,57 +2361,57 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data points to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the delay vectors (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name># of components,maximal embedding dimension (1,10)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>theiler window (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>maximal length scale (max data interval)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal length scale ((max data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>number of epsilon values (100)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-N</value>
 				<name>maximal number of pairs to be used (0 means all possible pairs) (1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-E</value>
 				<name>use data that is normalized to [0,1] for all components</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2434,57 +2434,57 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-m</value>
 				<name>minimal embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-M</value>
 				<name>maximal embedding dimension (at least 2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-t</value>
 				<name>minimal time separation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-n</value>
 				<name>minimal number of center points</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 			<parameter>
 				<value>-#</value>
 				<name>resolution, values per octave (2) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-K</value>
 				<name>maximal number of neighbours (100)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column(s) to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -2497,47 +2497,47 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data points to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the delay vectors (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name># of components, maximal embedding dimension (1,10)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-Q</value>
 				<name>Order of the entropy (2.0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>maximal length scale (whole data range)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal length scale ((data range)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>number of epsilon values (20)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2559,7 +2559,7 @@
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>	
@@ -2572,7 +2572,7 @@
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -2585,22 +2585,22 @@
 			<parameter>
 				<value>-m</value>
 				<name>minimal dimension to print (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name>maximal dimension to print (whole file)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>smooth over an interval of 2#+1 points (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-E</value>
 				<name>show the length scales in rescaled units [0:1] (units of the data)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2622,12 +2622,12 @@
 			<parameter>
 				<value>-a</value>
 				<name>average using (-#,...,+#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>		
 	</command>
@@ -2642,62 +2642,62 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-M</value>
 				<name>maximal embedding dimension to use (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>minimal embedding dimension to use (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay to use (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal length scale to search neighbors ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-R</value>
 				<name>maximal length scale to search neighbors ((data interval)/100)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>number of length scales to use (5)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of reference points to use (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>number of iterations in time (50)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>'theiler window' (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2720,42 +2720,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension to use (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay to use (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>window around the reference point which should be omitted	(0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal length scale for the neighborhood search ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>number of iterations in time (50)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2778,47 +2778,47 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>no. of components, embedding dimension (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal neighborhood size</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the size of the neighborhood if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>number of neighbors to use (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of iterations</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>invert the order of the time series.</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>			
 			<parameter>
 				<value>-V</value>
@@ -2843,42 +2843,42 @@
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (until no change)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>make spectrum exact rather than distribution</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of points (whole file)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -2901,27 +2901,27 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points (whole file)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>number of columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -2934,72 +2934,72 @@
 			<parameter required='true'>
 				<value>-D</value>
 				<name>number of lags for autocorrelation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>type of average: 0=max(c), 1=|c|/lag, 2=(c/lag)**2, 3=max(c)/lag (default 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (default 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>improvement factor before write (default 0.9 = if 10% better)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>maximal number of points to be processed (default all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>initial temperature (default: automatic melting)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>cooling factor (default automatic)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>total steps before cooling (default 20000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>successful steps before cooling (default 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>minimal successful steps (default 200)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>goal value of cost function (default zero)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-X</value>
@@ -3009,12 +3009,12 @@
 			<parameter>
 				<value></value>
 				<name></name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value></value>
 				<name></name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3041,72 +3041,72 @@
 			<parameter required='true'>
 				<value>-D</value>
 				<name>number of lags for autocorrelation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>type of average: 0=max(c), 1=|c|/lag, 2=(c/lag)**2, 3=max(c)/lag (default 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (default 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>improvement factor before write (default 0.9 = if 10% better)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>maximal number of points to be processed (default all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>initial temperature (default: automatic melting)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>cooling factor (default automatic)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>total steps before cooling (default 20000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>successful steps before cooling (default 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>minimal successful steps (default 200)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>goal value of cost function (default zero)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-X</value>
@@ -3116,12 +3116,12 @@
 			<parameter>
 				<value></value>
 				<name></name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value></value>
 				<name></name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3148,77 +3148,77 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>time span of one bin</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-D</value>
 				<name>total time spanned</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>type of average: 0=max(c), 1=|c|/lag, 2=(c/lag)**2 (default 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (default 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>improvement factor before write (default 0.9 = if 10% better)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>maximal number of points to be processed (default all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (measurements from 1, times from 2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>initial temperature (default: automatic melting)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>cooling factor (default automatic)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>total steps before cooling (default 20000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>successful steps before cooling (default 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>minimal successful steps (default 200)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>goal value of cost function (default zero)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3245,27 +3245,27 @@
 			<parameter>
 				<value>-d</value>
 				<name>delay (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of points (whole file)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -3278,47 +3278,47 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-m</value>
 				<name>embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>absolute radius of neighbourhoods</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-v</value>
 				<name>same as fraction of standard deviation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>time steps ahead forecast (one step)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>	
@@ -3331,22 +3331,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 		</parameters>
 	</command>
@@ -3359,22 +3359,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 		</parameters>
 	</command>
@@ -3387,37 +3387,37 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>time span of one bin</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-D</value>
 				<name>total time spanned</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>expect intervals rather than times</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>												
 		</parameters>
 	</command>
@@ -3430,42 +3430,42 @@
 			<parameter>
 				<value>-F</value>
 				<name>maximal frequency (2*l / total time)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>number of frequencies (F* total time /2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-w</value>
 				<name>frequency resolution (0) </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>expect intervals rather than times</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 		</parameters>
 	</command>
@@ -3478,82 +3478,82 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>time span of one bin</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-D</value>
 				<name>total time spanned</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>expect intervals rather than times</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>type of average: 0=max(s) 1=|s|/f 2=(s/f)**2 3=|s| (default 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (default 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>improvement factor before write (default 0.9 = if 10% better)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>maximal number of points to be processed (default all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>initial temperature (default: automatic melting)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>cooling factor (default automatic)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>total steps before cooling (default 20000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>successful steps before cooling (default 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>minimal successful steps (default 200)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>goal value of cost function (default zero)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3580,82 +3580,82 @@
 			<parameter>
 				<value>-F</value>
 				<name>maximal frequency (2*l / total time)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>number of frequencies (F* total time /2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>expect intervals rather than times</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-W</value>
 				<name>type of average: 0=max(s) 1=|s|/f 2=(s/f)**2 3=|s| (default 0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>number of surrogates (default 1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>improvement factor before write (default 0.9 = if 10% better)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-I</value>
 				<name>seed for random numbers (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>maximal number of points to be processed (default all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>initial temperature (default: automatic melting)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-a</value>
 				<name>cooling factor (default automatic)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-S</value>
 				<name>total steps before cooling (default 20000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>successful steps before cooling (default 2000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-z</value>
 				<name>minimal successful steps (default 200)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-C</value>
 				<name>goal value of cost function (default zero)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3683,22 +3683,22 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (numbers have to be separated by commas) (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-D</value>
 				<name>number of correlations (100)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3720,52 +3720,52 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>columns to be read (separated by a comma) (1,2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (3)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-n</value>
 				<name>for how many points should the error be calculated (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-k</value>
 				<name>minimal numbers of neighbors for the fit (30)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size to start with ((data interval)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-f</value>
 				<name>factor to increase the neighborhood size if not enough neighbors were found (1.2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-s</value>
 				<name>steps to be forecasted (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3789,42 +3789,42 @@
 			<parameter required='true'>
 				<value>-r</value>
 				<name>absolute noise level </name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-v</value>
 				<name>same as fraction of standard deviation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-u</value>
 				<name>add uniform noise (default Gaussian)</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-0</value>
 				<name>do not read input, just issue random numbers</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -3837,37 +3837,37 @@
 			<parameter>
 				<value>-v</value>
 				<name>give unnormalised autocovariance</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-p</value>
 				<name>assume periodic continuation</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-P</value>
 				<name>assume periodic continuation exactly</name>
-				<type>boolean</type>
+				<type>simple</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>			
 		</parameters>
 	</command>
@@ -3880,37 +3880,37 @@
 			<parameter required='true'>
 				<value>-m</value>
 				<name>initial embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for initial embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-q</value>
 				<name>number of principal components (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -3923,42 +3923,42 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of points to use</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension (5)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay for the embedding (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>neighborhood size ((interval of the data)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-v</value>
 				<name>neighborhood size in units of the std. dev. of the data overwrites the -r option (not set)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -3982,42 +3982,42 @@
 			<parameter required='true'>
 				<value>-m</value>
 				<name>embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-q</value>
 				<name>dimension of manifold</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-r</value>
 				<name>radius of neighbourhoods</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-k</value>
 				<name>minimal number of neighbours</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-i</value>
 				<name>number of iterations (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
@@ -4040,52 +4040,52 @@
 			<parameter required='true'>
 				<value>-d</value>
 				<name>delay</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-M</value>
 				<name>maximal embedding dimension</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter required='true'>
 				<value>-t</value>
 				<name>minimal time separation</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>minimal embedding dimension (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-#</value>
 				<name>resolution, values per octave (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-T</value>
 				<name>for Guido</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-l</value>
 				<name>number of values to be read (all)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of values to be skipped (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1 or file,#)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
 				<name>verbosity level (0 = only fatal errors)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 		</parameters>
 	</command>
@@ -4098,37 +4098,37 @@
 			<parameter>
 				<value>-l</value>
 				<name>number of data to be used</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-x</value>
 				<name>number of lines to be ignored</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-c</value>
 				<name>column to be read (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-m</value>
 				<name>embedding dimension to use (2)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-d</value>
 				<name>delay to use (1)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-t</value>
 				<name>window around the reference point which should be omitted (0)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-r</value>
 				<name>minimal length scale for the neighborhood search ((std. dev. of data)/1000)</name>
-				<type>integer</type>
+				<type>text</type>
 			</parameter>
 			<parameter>
 				<value>-V</value>
