@@ -116,7 +116,7 @@ class TiseanController:
 			executionString = './' + commandString
 		else:
 			executionString = commandString
-		print executionString
+			
 		self.thread.execute_command(executionString)
 
 		return True
