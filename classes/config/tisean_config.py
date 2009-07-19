@@ -7,8 +7,10 @@
 import sys
 from xml.dom.minidom import parse
 from tisean_strategy import TiseanGuiParameterBuildStrategy
-from tisean_strategy import TiseanGuiIntegerParameterBuildStrategy
+from tisean_strategy import TiseanGuiTextParameterBuildStrategy
 from tisean_strategy import TiseanGuiOptionsParameterBuildStrategy
+from tisean_strategy import TiseanGuiFileParameterBuildStrategy
+from tisean_strategy import TiseanGuiSimpleParameterBuildStrategy
 
 ##
 # Development Documentation for the TiseanCommandConfig class.
@@ -153,10 +155,10 @@ class TiseanCommandParameterConfig:
 	
 
 #
-# Subclass that defines a Parameter that accepts only an integer.
+# Subclass that defines a Parameter that accepts only text.
 # 
 #		
-class TiseanCommandParameterInteger(TiseanCommandParameterConfig):
+class TiseanCommandParameterText(TiseanCommandParameterConfig):
 
 	##
 	# The Constructor
@@ -172,7 +174,54 @@ class TiseanCommandParameterInteger(TiseanCommandParameterConfig):
 	# Returns the build strategy of the GUI Element that represents the parameter
 	#
 	def get_build_strategy(self):
-		return TiseanGuiIntegerParameterBuildStrategy()
+		return TiseanGuiTextParameterBuildStrategy()
+
+#
+# Subclass that defines a Simple parameter (no value).
+# 
+#		
+class TiseanCommandParameterSimple(TiseanCommandParameterConfig):
+
+	##
+	# The Constructor
+	#
+	# @param self the instance pointer
+	# @param name command name
+	# @param commandLineName name that the command has on command line
+	#
+	def __init__(self,name,commandLineName):
+		TiseanCommandParameterConfig.__init__(self,name,commandLineName)
+
+	##
+	# Returns the build strategy of the GUI Element that represents the parameter
+	#
+	def get_build_strategy(self):
+		return TiseanGuiSimpleParameterBuildStrategy()
+		
+
+#
+# Subclass that defines a Parameter that its a file dialog.
+# 
+#		
+class TiseanCommandParameterFile(TiseanCommandParameterConfig):
+
+	##
+	# The Constructor
+	#
+	# @param self the instance pointer
+	# @param name command name
+	# @param commandLineName name that the command has on command line
+	#
+	def __init__(self,name,commandLineName):
+		TiseanCommandParameterConfig.__init__(self,name,commandLineName)
+
+	##
+	# Returns the build strategy of the GUI Element that represents the parameter
+	#
+	def get_build_strategy(self):
+		return TiseanGuiFileParameterBuildStrategy()
+
+		
 #
 # Subclass that defines a Parameter that accepts different options.
 # 
@@ -297,8 +346,8 @@ class TiseanConfig:
 					if (node.nodeType == node.TEXT_NODE):
 						paramType = node.data
 
-				if paramType == 'integer':
-					parameterConfig = TiseanCommandParameterInteger(paramName,paramValue)
+				if paramType == 'text':
+					parameterConfig = TiseanCommandParameterText(paramName,paramValue)
 				
 				if paramType == 'options':
 					parameterConfig = TiseanCommandParameterOptions(paramName,paramValue)
@@ -312,6 +361,13 @@ class TiseanConfig:
 						if (optionTextNode.nodeType == optionTextNode.TEXT_NODE): 
 							value = optionTextNode.data
 							parameterConfig.add_option(value)
+				
+				if paramType == 'file':
+					parameterConfig = TiseanCommandParameterFile(paramName,paramValue)
+					
+				if paramType == 'simple':
+					parameterConfig = TiseanCommandParameterSimple(paramName,paramValue)
+					
 				
 				#we set the parameter as required if so.
 				if (required is True):

@@ -106,8 +106,9 @@ class TiseanController:
 		
 		#we perform the execution of the command
 		for widget in widgets:
-			if (widget.get_selected_value() is not ''):
-				commandString = commandString + ' ' + widget.get_parameter_name() + ' ' + widget.get_selected_value()
+			paramString = widget.get_parameter_string()
+			if (paramString is not ''):
+				commandString = commandString + ' ' + paramString
 	
 		self.thread = TiseanRunner()
 		self.thread.register_observer(self.view.get_console_updater())		
@@ -115,7 +116,7 @@ class TiseanController:
 			executionString = './' + commandString
 		else:
 			executionString = commandString
-
+		print executionString
 		self.thread.execute_command(executionString)
 
 		return True
@@ -126,7 +127,10 @@ class TiseanController:
 	# @param self the instance pointer
 	# @param menuitem the gui element that made the request
 	def application_close(self,window):
-
+		if ((self.thread is not None) and (self.thread.is_running())):
+			self.thread.abort_execution()
+		if (self.thread is not None):
+			self.thread.join()
 		self.view.get_console_updater().stop_updater()
 		self.view.get_console_updater().join()
 		gtk.main_quit()
