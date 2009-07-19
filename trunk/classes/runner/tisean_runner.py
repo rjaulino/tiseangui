@@ -62,7 +62,7 @@ class TiseanRunner(Thread):
 			return os.popen(commandString,'r');
 		#popen support tested on Unix
 		sp = subprocess
-		return subprocess.Popen(command, stdout=sp.PIPE, stderr=sp.STDOUT).stdout
+		return subprocess.Popen(command, stdout=sp.PIPE, stderr=sp.STDOUT)
 
 	##
 	# Reads lines from a file descriptor, uses to prevent problems of no content sent to the output 
@@ -112,9 +112,12 @@ class TiseanRunner(Thread):
 				self.notify_observers(line)
 		else:
 			while True:
-				for line in self.readlines(popen):
+				if (self.abort is True): break
+				for line in self.readlines(popen.stdout):
+					if (self.abort is True): break
 					self.notify_observers(line)
-				if popen.poll() != None or self.abort: break
+				if (popen.poll() != None): break
+				
 
 		self.notify_observers('** Execution Finished **\n')
 		
