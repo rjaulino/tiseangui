@@ -63,9 +63,9 @@ class TiseanCommandConfig:
 		self.parameters[parameter.get_value()] = parameter
 		
 	##
-	#
-	#
-	#
+	# Obtains the set of TiseanCommandParameterConfig instances 
+	# set on the Tisean configuration
+	# @param self the instance pointer
 	#
 	def get_parameters(self):
 		return self.parameters
