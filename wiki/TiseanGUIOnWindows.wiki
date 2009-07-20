@@ -1,4 +1,4 @@
-#labels Instructions,HowTo
+#labels Instructions,HowTo,Featured
 #Instructions to make TiseanGUI work on MS Windows.
 
 = Introduction =
