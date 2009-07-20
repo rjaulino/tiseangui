@@ -136,14 +136,31 @@ class TiseanView():
 		
 		return True
 	
+	##
+	# Callback to show the About Dialog on the GUI
+	#
+	# @param self the instance pointer
+	# @param menuItem widget that performs the calling
+	#
 	def about_dialog_show(self,menuItem):
 		self.aboutUsDialog.show()
 		return True
-		
+
+	##
+	# Callback to hide the About Dialog on the GUI
+	#
+	# @param self the instance pointer
+	#		
 	def about_dialog_hide(self, widget, event):
 		self.aboutUsDialog.hide()
 		return True
 
+	##
+	# Callback to show the Console Dialog on the GUI
+	#
+	# @param self the instance pointer
+	# @param menuItem widget that performs the calling
+	#
 	def console_display(self,menuItem):
 
 		if (self.consoleWindow.get_property("visible")):
@@ -157,7 +174,6 @@ class TiseanView():
 	# @param self the instance pointer	
 	def show(self):
 		self.mainWindow.show()
-	#	self.consoleWindow.show()	
 		
 	##
 	# Sets the configuration form of a command on the main gui.
@@ -172,29 +188,50 @@ class TiseanView():
 		self.optionsCommandsHolder.set_border_width(10)
 		self.currentForm = form
 	
+	##
+	# Getter of the current command form
+	# 
+	# @param self the instance pointer
+	#
 	def get_command_form(self):
 		return self.currentForm
 	
 	##
+	# Getter of the Console updater of the View
 	#
-	#
+	# @param self the instance pointer
 	#
 	def get_console_updater(self):
 		return self.consoleUpdater
 	
 	##
+ 	# Stops the Console updater of the view
 	#
-	#
+	# @param self the instance pointer
 	#
 	def stop_console_updater(self):
 		self.consoleUpdater.stop_updater()
 
+##
+# Represents a menu item of the Tisean GUI 
+# 
+# @author Martin Ramos Mejia
+# @version 0.1
 class TiseanMenuItem(gtk.MenuItem):
 
+	##
+	# The constructor
+	#
+	# @param self the instance pointer
+	# @param name the name of the menu item
 	def __init__(self,name):
 		gtk.MenuItem.__init__(self,name)
 		self.commandName = name
 	
+	##
+	# Getter of the menu item name
+	#
+	# @param self the instance pointer
 	def get_command_name(self):
 		return self.commandName
 		
@@ -292,8 +329,9 @@ class TiseanCommandForm(gtk.VBox):
 		self.executeButton.connect('clicked',self.controller.execute_command)
 	
 	##
+	# Displays the command form
 	#
-	#
+	# @param self the instance pointer
 	#	
 	def show(self):
 		
@@ -335,79 +373,185 @@ class TiseanCommandForm(gtk.VBox):
 			widget.set_invalid_layout()
 		#there were invalid items
 		return False
-					
+	
+	##
+	# Getter of the command that the form represents
+	# 
+	# @param self the instance pointer
+	#				
 	def get_command_name(self):
 		command = self.commandName
 		if (platform.system() is 'Windows'):
 			command = command + '.exe' 
 		return command
 	
+	##
+	# Getter of all the parameter widgets included in the Form
+	#
+	# @param self the instance pointer
+	#
 	def get_widgets(self):
 		return self.widgets
-		
+	
+	##
+	# Deletes all the validation errors from the GUI
+	#
+	# @param self the instance pointer
+	#	
 	def clear_validation_errors(self):
 		self.clear_message_box()
 		for	widget in self.widgets:
 			widget.set_valid_layout()
-			
+
+	##
+	# Sets a message in the message box of the form
+	#
+	# @param self the instance pointer
+	# @param text text to be set in the message box
+	#
 	def set_message_in_message_box(self,text):
 		return self.messageBox.set_markup('<b>' + text + '</b>')
-		
+	
+	##
+	# Clears the content of the message box of the form
+	#
+	# @param self the instance pointer
+	#	
 	def clear_message_box(self):
 		return self.messageBox.set_text('')
-	
+
+##
+# Base interface that describes a TiseanWidget
+# 
+# @author Martin Ramos Mejia
+# @version 0.1	
 class TiseanWidget:
 	
+	##
+	# The Constructor 
+	# 
+	# @param self The instance pointer
+	# @param name name of the widget
+	#
 	def __init__(self,name):
 		self.parameterName = name
 		self.required = False
 	
+	##
+	# Validates the widget
+	#
+	# @param self The instance pointer
+	#
 	def validate(self):
 		return True
-		
+
+	##
+	# Getter of the parameter name represented on the widget
+	#
+	# @param self The instance pointer
+	#		
 	def get_parameter_name(self):
 		return self.parameterName
 
+	##
+	# Getter of the current value of the widget
+	#
+	# @param self The instance pointer
+	#		
 	def get_selected_value(self):
 		return '0'
 	
+	##
+	# Sets the widget as a required parameter
+	#
+	# @param self The instance pointer
+	#			
 	def set_required(self):
 		self.required = True
 
+	##
+	# Indicates of the widget is a required parameter or not
+	#
+	# @param self The instance pointer
+	#		
 	def is_required(self):
 		return self.required
-	
+
+	##
+	# Defines the invalid layout of the widget
+	#
+	# @param self The instance pointer
+	#			
 	def set_invalid_layout(self):
 		pass
 
+	##
+	# Defines a valid layout over the widget
+	#
+	# @param self The instance pointer
+	#		
 	def set_valid_layout(self):
 		pass
 
+	##
+	# Translates the current values of the widget to a parameter string to form an execution string
+	#
+	# @param self The instance pointer
+	#		
 	def get_parameter_string(self):
 		if (self.get_selected_value() is not ''):
 			return self.get_parameter_name() + ' ' + self.get_selected_value()
 		else:
 			return ''
 				
-				
+##
+# File Widget Dialog
+# 
+# @author Martin Ramos Mejia
+# @version 0.1				
 class TiseanFileDialogWidget(TiseanWidget,gtk.FileChooserDialog):
 
+	##
+	# The Constructor
+	#
+	# @param self The instance pointer
+	# @param tiseanFileWidget file widget related to the dialog
+	#
 	def __init__(self,tiseanFileWidget):
 		self.tiseanFileWidget = tiseanFileWidget
 		gtk.FileChooserDialog.__init__(self);
 		self.callback_connections()
-	
+
+	##
+	# Connects the callbacks of the widget
+	#
+	# @param self The instance pointer
+	#			
 	def callback_connections(self):
 		self.connect('file-activated',self.update_file_widget)
-	
+
+	##
+	# Performs the update of the tiseanFileWidget related to the TiseanFileDialogWidget
+	#
+	# @param self The instance pointer
+	#			
 	def update_file_widget(self,filechooser):
 		self.hide()
 		self.tiseanFileWidget.change_selected_file(self.get_filename())
 			
 		
-
+##
+# File Widget
+# 
+# @author Martin Ramos Mejia
+# @version 0.1
 class TiseanFileWidget(TiseanWidget,gtk.HBox):
 
+	##
+	# The Constructor
+	#
+	# @param self The instance pointer
+	#		
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
 		gtk.HBox.__init__(self)
@@ -421,19 +565,34 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 		self.callback_connection()
 		
 	##
-	# Connects all the callbacks of the main elements of the view
+	# Connects all the callbacks
 	#
 	# @param self the instance pointer	
 	def callback_connection(self):
 		self.button.connect('clicked',self.display_file_dialog)
-		
+
+	##
+	# Shows the file dialog
+	#
+	# @param self The instance pointer
+	#				
 	def display_file_dialog(self,button):
 		self.fileDialog = TiseanFileDialogWidget(self);
 		self.fileDialog.show()
 		
+	##
+	# Changes the selected file on the widget
+	#
+	# @param self The instance pointer
+	#				
 	def change_selected_file(self,fileRoute):
 		self.entry.set_text(fileRoute)
 	
+	##
+	# shows the widget
+	#
+	# @param self The instance pointer
+	#				
 	def show(self):
 		self.pack_start(self.label,False,False)
 		self.pack_start(self.entry,False,False)
@@ -443,19 +602,45 @@ class TiseanFileWidget(TiseanWidget,gtk.HBox):
 		self.button.show()
 		gtk.VBox.show(self)
 		
+	##
+	# Returns the current value of the widget
+	#
+	# @param self The instance pointer
+	#						
 	def get_selected_value(self):
 		return self.entry.get_text()
-		
+
+	##
+	# Sets the invalid layout  
+	#
+	# @param self The instance pointer
+	#						
 	def set_invalid_layout(self):
 		colour = gtk.gdk.color_parse('red3')
 		self.entry.modify_base(gtk.STATE_NORMAL,colour)
-		
+
+	##
+	# Sets the valid layout of the widget
+	# 
+	# @param self The instance pointer
+	#						
 	def set_valid_layout(self):
 		colour = gtk.gdk.color_parse('white')
 		self.entry.modify_base(gtk.STATE_NORMAL,colour)		
 
+##
+# Text Parameter Widget
+# 
+# @author Martin Ramos Mejia
+# @version 0.1
+#
 class TiseanTextParameterWidget(TiseanWidget,gtk.HBox):
 
+	##
+	# Constructor
+	#
+	# @param self The instance pointer
+	#				
 	def __init__(self,name,label):
 		TiseanWidget.__init__(self,name)
 		gtk.HBox.__init__(self)
@@ -465,8 +650,12 @@ class TiseanTextParameterWidget(TiseanWidget,gtk.HBox):
 		self.label.set_single_line_mode(True)
 		self.entry = gtk.Entry()
 		self.entry.set_max_length(50)
-		
-	
+
+	##
+	# Displays the widget
+	#
+	# @param self The instance pointer
+	#
 	def show(self):
 		self.pack_start(self.label,False,False)
 		self.pack_start(self.entry,False,False)
@@ -474,20 +663,44 @@ class TiseanTextParameterWidget(TiseanWidget,gtk.HBox):
 		self.entry.show()
 		gtk.VBox.show(self)
 
-
+	##
+	# Obtains the selected value of the widget 
+	#
+	# @param self The instance pointer
+	#				
 	def get_selected_value(self):
 		return self.entry.get_text()
 
+	##
+	# Sets the invalid layout
+	# 
+	# @param self The instance pointer
+	#				
 	def set_invalid_layout(self):
 		colour = gtk.gdk.color_parse('red3')
 		self.entry.modify_base(gtk.STATE_NORMAL,colour)
 
+	##
+	# Sets the valid layout
+	#
+	# @param self The instance pointer
+	#				
 	def set_valid_layout(self):
 		colour = gtk.gdk.color_parse('white')
 		self.entry.modify_base(gtk.STATE_NORMAL,colour)		
 
+##
+# Parameter with Options Widget
+# 
+# @author Martin Ramos Mejia
+# @version 0.1
 class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 
+	##
+	# The Constructor
+	#
+	# @param self The instance pointer
+	#				
 	def __init__(self,name,label,options):
 		TiseanWidget.__init__(self,name)
 		gtk.HBox.__init__(self)
@@ -513,7 +726,11 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 			self.buttons.append(button)
 			button.show()
 			
-	
+	##
+	# Displays the widget
+	#
+	# @param self The instance pointer
+	#					
 	def show(self):
 		self.pack_start(self.label,False,False)
 		self.pack_start(self.radioHolder,False,False)
@@ -521,18 +738,38 @@ class TiseanOptionsParameterWidget(TiseanWidget,gtk.HBox):
 		self.radioHolder.show()
 		gtk.VBox.show(self)
 		
+	##
+	# Returns the current value of the widget
+	#
+	# @param self The instance pointer
+	#						
 	def get_selected_value(self):
 		
 		for button in self.buttons:
 			if (button.get_active() is True):
 				return button.get_label()
 
+##
+# Simple Parameter Widget
+# 
+# @author Martin Ramos Mejia
+# @version 0.1
 class TiseanSimpleParameterWidget(TiseanOptionsParameterWidget):
 
+	##
+	# The Constructor
+	#
+	# @param self The instance pointer
+	#				
 	def __init__(self,name,label):
 		options = ['no', 'yes']
 		TiseanOptionsParameterWidget.__init__(self,name,label,options)
 
+	##
+	# Returns the processed parameter string 
+	#
+	# @param self The instance pointer
+	#				
 	def get_parameter_string(self):
 		value = self.get_selected_value()
 		if (value == 'yes'):

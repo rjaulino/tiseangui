@@ -87,6 +87,11 @@ class TiseanRunner(Thread):
 			gobject.idle_add(observer.set_update,message)
 			time.sleep(0.001)
 
+	##
+	# Stops the execution of the command execution Thread
+	#
+	# @param self the instance pointer
+	#
 	def abort_execution(self):
 		self.abort = True
 

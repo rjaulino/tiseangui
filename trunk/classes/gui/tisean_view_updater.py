@@ -4,33 +4,22 @@ import gobject
 from threading import Thread
 from threading import Lock
 
-##
-# 
-#
-#
-class TiseanViewSimpleUpdater():
-
-	def __init__(self,console):
-
-		self.console = console
-		self.message = ''
-	
-	def set_update(self,message):
-		self.message = message
-		scrolledWindow = self.console.get_child()
-		textConsole = scrolledWindow.get_child()
-		textBuffer = textConsole.get_buffer()
-		startIter = textBuffer.get_iter_at_line_offset(0, 0)
-		endIter = textBuffer.get_iter_at_line_offset(textBuffer.get_line_count()-1,0)
-		text = textBuffer.get_text(startIter,endIter)
-		textBuffer.set_text(text + message)
 
 ##
+# Development Documentation for the TiseanViewUpdater class.
+# Thread that performs the update of the view when it gets a notification from the running thread. 
 # 
-#
+# @author Martin Ramos Mejia
+# @version 0.1
 #
 class TiseanViewUpdater(Thread):
 
+	##
+	# The Constructor
+	#
+	# @param self The instance pointer
+	# @param console Console Widget Instance where the update it's going to be done 
+	#
 	def __init__(self,console):
 		Thread.__init__(self)
 		self.console = console
@@ -39,6 +28,12 @@ class TiseanViewUpdater(Thread):
 		self.running = False
 		self.lock = Lock()
 	
+	##
+	# Notification of the updater of a new message
+	#
+	# @param self The instance pointer
+	# @param message New message to be processed by the updater
+	#
 	def set_update(self,message):
 		self.lock.acquire()
 		try:
@@ -47,6 +42,11 @@ class TiseanViewUpdater(Thread):
 		finally:
 			self.lock.release()
 	
+	##
+	# Sets the new message to console 
+	#
+	# @param self The instance pointer
+	#
 	def update_message(self):
 		self.lock.acquire()
 		try:
@@ -61,6 +61,11 @@ class TiseanViewUpdater(Thread):
 		finally:
 			self.lock.release()
 
+	##
+	# Inits the updating Thread
+	# 
+	# @param self The instance pointer
+	#
 	def start_updater(self):
 		self.lock.acquire()
 		try:
@@ -70,11 +75,22 @@ class TiseanViewUpdater(Thread):
 
 		self.start()
 	
+	
+	##
+	# Definition of the updating process of the Thread
+	# 
+	# @param self The instance pointer
+	#
 	def run(self):
 		while (self.running is True):
 			if (self.newMessage is True):
 				self.update_message()
 	
+	##
+	# Stops the updates process
+	#
+	# @param self The instance pointer
+	#
 	def stop_updater(self):
 		
 		self.lock.acquire()

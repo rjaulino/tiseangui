@@ -82,9 +82,10 @@ class TiseanController:
 		form.show()
 	
 	##
+	# Callback that performs the execution of a certain command
 	#
-	#
-	#
+	# @param self the instance pointer
+	# @param button the execution button
 	#
 	def execute_command(self,button):
 
