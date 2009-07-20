@@ -1,7 +1,7 @@
 #labels Featured
 #TiseanGUI Milestones.
 
-= Milestone 0.1 (Prototype) =
+= Milestone 0.1 (Prototype) COMPLETED (19-07-2009) =
 
 The first version of *TiseanGUI* is a proof of concept. The main goal of this version is to build the dinamic GUI generator, and be able to execute some commands of Tisean using the GUI, allowing the user to setup them using the GUI.
 
